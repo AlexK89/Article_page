@@ -1,9 +1,10 @@
 // hard coded images urls, but it should be fetched from the server
 let images = ['./img/gallery-slide-1.jpg', './img/gallery-slide-2.jpg', './img/gallery-slide-3.jpg'];
 let counter = 0;
+const interval = 8000;
 const carouselEl = document.querySelector('.carousel');
 const carouselNavigation = carouselEl.querySelector('.carousel__navigation__buttons');
-let carouselInterval = setInterval(() => clickHandler(1), 8000);
+let carouselInterval = setInterval(() => clickHandler(1), interval);
 
 const createImageEl = (image, direction) => {
     // Page numeration
@@ -65,7 +66,7 @@ const clickHandler = (moveTo) => {
 
 carouselNavigation.addEventListener('click', (event) => {
     clearInterval(carouselInterval);
-    carouselInterval = setInterval(() => clickHandler(1), 8000);
+    carouselInterval = setInterval(() => clickHandler(1), interval);
 
     (event.target.classList.contains('btn_left')) && clickHandler(-1);
     (event.target.classList.contains('btn_right')) && clickHandler(1);
@@ -90,5 +91,5 @@ openPopupEl.addEventListener('click', showPopup);
 
 popupWindow.addEventListener('click', () => {
     popupWindow.classList.remove('visible');
-    carouselInterval = setInterval(() => clickHandler(1), 8000);
+    carouselInterval = setInterval(() => clickHandler(1), interval);
 });
