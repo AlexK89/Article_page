@@ -1,0 +1,120 @@
+/* Custom styles */
+.carousel {
+    width: 100%;
+    height: 493px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Carousel navigation */
+.carousel__navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 2.8em;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.carousel__navigation__buttons {
+    display: flex;
+}
+
+.carousel__navigation__buttons p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.carousel__navigation__buttons .nav_btn {
+    cursor: pointer;
+    position: relative;
+}
+
+.carousel__navigation__buttons .btn_left img {
+    pointer-events: none;
+    width: 10px;
+    transform: rotate(180deg);
+}
+
+.carousel__navigation__buttons .btn_left span {
+    margin-left: 0.6em;
+    pointer-events: none;
+}
+
+.carousel__navigation__buttons .btn_right span {
+    margin-right: 0.6em;
+    pointer-events: none;
+}
+
+.carousel__navigation__buttons .btn_right img {
+    pointer-events: none;
+    width: 10px;
+}
+
+.carousel__navigation__buttons .page_number {
+    margin: 0 2em;
+}
+
+/* ============================ */
+
+/* Slide section */
+.img_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.img_wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.img_wrapper.image_left {
+    transform: translate(-100%, 0);
+}
+
+.img_wrapper.image_right {
+    transform: translate(100%, 0);
+}
+
+.img_wrapper.image_left.image_active,
+.img_wrapper.image_right.image_active {
+    transform: translate(0, 0);
+}
+
+/* ============================ */
+
+/* Expand image */
+.carousel__open_img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    width: 34px;
+    height: 34px;
+    background-color: rgba(0, 0, 0, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel__open_img img {
+    width: 18px;
+    pointer-events: none;
+}
+
+/* ============================ */
